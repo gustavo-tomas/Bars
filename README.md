@@ -8,3 +8,12 @@ _Monster Hunter_
 ![nargacuga](screenshots/nargacuga_sumidao.png)
 ![tigrex](screenshots/tigrex.png)
 ![zinogre](screenshots/zinoga_de_noitao.png)
+
+_Nature_
+![trees](screenshots/trees.png)
+![valley](screenshots/valley.png)
+![sunset](screenshots/sunset.png)
+
+_Anime_
+![anime](screenshots/anime.png)
+![anime_mask](screenshots/anime_mask.png)
