@@ -1,0 +1,10 @@
+(defwidget profile []
+  (box :class "profile"
+       :orientation "v"
+       :space-evenly false
+       :vexpand true
+    (box :class "profile-pic"
+         :tooltip ":)"
+         :orientation "h"
+         :space-evenly false)
+    (label :text "Name ? maybe")))

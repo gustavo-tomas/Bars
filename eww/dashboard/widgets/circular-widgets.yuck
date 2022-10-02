@@ -1,0 +1,100 @@
+(defwidget radialmeter [value text ?class]
+  (circular-progress :value value
+                     :class "radial radial-${class}"
+                     :start-at 50
+                     :thickness 12
+                    ;  :clockwise false
+                     :vexpand true
+                     :hexpand true
+    (label :text text
+           :class "radial-text"
+           :show_truncated false
+           :wrap false
+           :angle 0.0)))
+
+(defwidget circular-cpu []
+  (box :class "circular-cpu circular-widget" 
+       :spacing 0
+       :orientation "v"
+       :space-evenly false
+       :tooltip "CPU Usage: ${round(EWW_CPU.avg, 0)}%"
+       :vexpand true
+       :hexpand true
+    (radialmeter
+      :class "cpu"
+      :value {round(EWW_CPU.avg, 0)}
+      :text "")))
+
+(defwidget circular-ram []
+  (box :class "circular-ram circular-widget" 
+       :spacing 0
+       :orientation "v"
+       :space-evenly false
+       :tooltip "RAM Usage: ${round(EWW_RAM.used_mem_perc, 0)}%"
+       :vexpand true
+       :hexpand true
+    (radialmeter
+      :class "ram"
+      :value {round(EWW_RAM.used_mem_perc, 0)}
+      :text "")))
+
+(defwidget circular-gpu []
+  (box :class "circular-gpu circular-widget" 
+       :spacing 0
+       :orientation "v"
+       :space-evenly false
+       :tooltip "GPU Usage: ${gpu_usage}%"
+       :vexpand true
+       :hexpand true
+    (radialmeter
+      :class "gpu"
+      :value gpu_usage
+      :text "")))
+
+(defwidget circular-disk []
+  (box :class "circular-disk circular-widget" 
+       :spacing 0
+       :orientation "v"
+       :space-evenly false
+       :tooltip "DISK Usage: ${round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}%" ; ugly :)
+       :vexpand true
+       :hexpand true
+    (radialmeter
+      :class "disk"
+      :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+      :text "")))
+
+(defwidget circular-temperature []
+  (box :class "circular-temperature circular-widget" 
+       :spacing 0
+       :orientation "v"
+       :space-evenly false
+       :tooltip "CPU Temperature: ${EWW_TEMPS.CORETEMP_CORE_0}°C"
+       :vexpand true
+       :hexpand true
+    (radialmeter
+      :class "temperature"
+      :value {EWW_TEMPS.CORETEMP_CORE_0}
+      :text "")))
+
+(defwidget circular-widgets []
+  (box :class ""
+       :orientation "v"
+       :space-evenly false
+       :vexpand true
+       :spacing 10
+    (box :class ""
+         :orientation "h"
+         :spacing 10
+         :space-evenly false
+         :vexpand true
+      (circular-cpu)
+      (circular-ram))
+    (box :class ""
+         :orientation "h"
+         :spacing 10
+         :space-evenly false
+         :vexpand true
+      (circular-gpu)
+      (circular-disk)
+      (circular-temperature))))

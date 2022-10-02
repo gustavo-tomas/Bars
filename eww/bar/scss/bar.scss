@@ -1,0 +1,72 @@
+.bar {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 0.90rem;
+  background-color: $background;
+  color: $foreground;
+  // opacity: 0.92; @TODO one day
+}
+
+.icon {
+  color: $color1;
+  font-family: 'Font Awesome 6 Free Solid';
+}
+
+.icon:hover {
+  color: $color4;
+}
+
+.calendar {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 0.85rem;
+  background-color: $background;
+  color: $foreground;
+  border-radius: 7px;
+  border: 5px solid $background;
+}
+
+.workspaces button {
+  padding: 0 15px 0 15px;
+  transition: all;
+  transition-duration: 0.4s;
+}
+
+.workspaces button:hover {
+  transition: all;
+  transition-duration: 0.6s;
+  background-color: $color4;
+  color: $background;
+}
+
+.curr-workspace {
+  color: $background;
+  background-color: $color1;
+}
+
+.left-menu-button {
+  padding: 0px 12px;
+  border-radius: 7px;
+}
+
+.time-label {
+  border-radius: 7px;
+}
+
+.power-button {
+  padding: 0px 12px;
+  background-color: $color1;
+  color: $background;
+  border-radius: 7px;
+}
+
+scale trough {
+  all: unset;
+  background-color: $foreground;
+  border-radius: 5px;
+  min-height: 7px;
+  min-width: 70px;
+}
+
+.volume-slider trough highlight {
+  background-color: $color1;
+  border-radius: 5px;
+}

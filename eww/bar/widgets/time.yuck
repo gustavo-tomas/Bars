@@ -1,0 +1,8 @@
+(defwidget time-widget []
+  (eventbox :class ""
+            :orientation "h"
+            :space-evenly false
+            :tooltip "Calendar"
+    (button :class ""
+            :onclick {is_open_calendar == true ? "eww update is_open_calendar=\"false\" && eww close calendar" : "eww update is_open_calendar=\"true\" && eww open calendar"}
+      (label :class "time-label" :text time))))

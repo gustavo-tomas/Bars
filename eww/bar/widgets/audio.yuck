@@ -1,0 +1,26 @@
+(defwidget audio []
+  (eventbox :class ""
+            :onhover "eww update show_audio_slider=true"
+            :onhoverlost "eww update show_audio_slider=false"
+            :tooltip "Volume"
+
+    (box :class ""
+         :orientation "h"
+         :space-evenly false
+         :spacing 3
+
+      (button :class "icon"
+              :onclick "pavucontrol &"
+        (label :text ""))
+
+      (revealer :transition "slideright" 
+                :reveal show_audio_slider
+                :duration "550ms"
+        (scale :class "volume-slider"
+               :valign "center"
+               :max 100
+               :min 0
+               :orientation "h"
+               :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+               :value volume))
+      (label :text "${volume}%"))))

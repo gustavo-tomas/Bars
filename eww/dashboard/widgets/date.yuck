@@ -1,0 +1,11 @@
+(defwidget date []
+  (box :class "date-container"
+       :orientation "v"
+       :space-evenly false
+       :valign "end"
+    (box :orientation "v"
+         :space-evenly false
+      (label :class "date" :text "${time}")
+      (label :class "time" :text "${date}"))))
+    
+(defpoll date :interval "10s" `date "+%d/%m/%y"`)

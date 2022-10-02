@@ -1,0 +1,7 @@
+(defwidget gpu []
+  (box :class ""
+       :orientation "h"
+       :space-evenly false
+       :tooltip "GPU"
+    (button :class "icon" :onclick "kitty watch nvidia-smi &" "  ")
+    (label :text "${gpu_usage}%")))

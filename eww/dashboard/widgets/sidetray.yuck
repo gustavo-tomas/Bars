@@ -1,0 +1,12 @@
+(defwidget sidetray []
+  (box :class "sidetray"
+       :orientation "h"
+      ;  :space-evenly false
+    (button :class "sidetray-icon icon-firefox" :onclick "firefox &" "")
+    (button :class "sidetray-icon icon-telegram" :onclick "firefox web.telegram.org &" "")
+    (button :class "sidetray-icon icon-whatsapp" :onclick "firefox web.whatsapp.com &" "")
+    (button :class "sidetray-icon icon-code" :onclick "code &" "﬏")
+    (button :class "sidetray-icon icon-discord" :onclick "discord &" "")
+    (button :class "sidetray-icon icon-steam" :onclick "steam &" "")
+    (button :class "sidetray-icon icon-github" :onclick "firefox github.com &" "")
+    (button :class "sidetray-icon icon-kitty" :onclick "kitty &" "")))

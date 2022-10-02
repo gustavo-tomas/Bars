@@ -1,0 +1,35 @@
+(include "./bar/widgets/left-widgets.yuck")
+(include "./bar/widgets/center-widgets.yuck")
+(include "./bar/widgets/right-widgets.yuck")
+(include "./bar/widgets/calendar.yuck")
+(include "./dashboard/dashboard.yuck")
+(include "./variables.yuck")
+
+; Separated in three sections: left center right
+(defwidget bar []
+  (box
+    (left-widgets)
+    (center-widgets)
+    (right-widgets)))
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "35px"
+                      :anchor "bottom center")
+  :reserve (struts :side "bottom" :distance "4%")
+  (bar))
+
+(defwindow calendar
+  :monitor 0
+  :windowtype "dock"
+  :wm-ignore true
+  :geometry (geometry :x "5px" 
+                      :y "-40px" 
+                      :width "270px" 
+                      :height "150px"
+                      :anchor "bottom left")
+  (cal))

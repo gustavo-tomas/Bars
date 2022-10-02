@@ -1,0 +1,37 @@
+(include "dashboard/widgets/profile.yuck")
+(include "dashboard/widgets/sidetray.yuck")
+(include "dashboard/widgets/date.yuck")
+(include "dashboard/widgets/network.yuck")
+(include "dashboard/widgets/circular-widgets.yuck")
+
+; Separated in sections: profile, sidetray, date, ...
+(defwidget dashboard []
+  (box :class ""
+       :orientation "v"
+       :space-evenly false
+       :spacing 10
+    (box :class ""
+         :orientation "h"
+         :space-evenly false
+         :vexpand true
+         :valign "start"
+         :spacing 10
+      (box :class ""
+           :orientation "v"
+           :space-evenly false
+           :vexpand true
+           :spacing 10
+        (profile)
+        (date))
+      (circular-widgets)
+      (network))
+  (sidetray)))
+
+(defwindow dashboard
+  :monitor 0
+  :geometry (geometry :x "0"
+                      :y "0"
+                      :anchor "center")
+  :windowtype "dock"
+  :wm-ignore true
+  (dashboard))

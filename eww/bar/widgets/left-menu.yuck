@@ -1,0 +1,10 @@
+(defwidget left-menu []
+  (box :class ""
+       :orientation "h"
+       :space-evenly false
+       :tooltip "Dashboard"
+    (button :class "icon left-menu-button"
+            :onclick {is_open_dashboard == false ? 
+                                           "eww update is_open_dashboard=\"true\" && eww open dashboard" :
+                                           "eww update is_open_dashboard=\"false\" && eww close dashboard"}
+      (label :text ""))))

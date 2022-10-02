@@ -1,0 +1,23 @@
+(defwidget network []
+  (box :class "network circular-widget" 
+       :spacing 0
+       :orientation "v"
+      ;  :space-evenly false
+      ;  :valign "center"
+       :vexpand true
+       :tooltip "Network Traffic"
+    (label :halign "center" :valign "center" :class "radial radial-net" :text "")
+    (box :class "net-text"
+         :orientation "h"
+         :space-evenly false
+      (box :class ""
+           :orientation "v"
+           :space-evenly false
+        (label :class "" :halign "start" :text "Down: ")
+        (label :class "" :halign "start" :text "Up: "))
+      (box :class ""
+           :orientation "v"
+           :space-evenly false
+           :hexpand true
+        (label :class "" :limit-width 9 :halign "end" :show-truncated false :text "${round(EWW_NET.eno1.NET_DOWN * 8 / 1000000, 2)} Mb")
+        (label :class "" :limit-width 9 :halign "end" :show-truncated false :text "${round(EWW_NET.eno1.NET_UP * 8 / 1000000, 2)} Mb")))))

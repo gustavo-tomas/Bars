@@ -1,0 +1,20 @@
+.profile {
+  background-color: $fixed-background;
+  padding: 30px 25px;
+  color: $fixed-foreground;
+  border-radius: 10px;
+  font-family: 'JetBrainsMono Nerd Font';
+}
+
+.profile-pic {
+  background-image: url("/home/guga/Pictures/profile-pic.png");
+  background-color: $foreground;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+	background-position: top;
+	min-height: 100px;
+	min-width: 100px;
+	border-radius: 50%;
+  margin-bottom: 40px;
+}

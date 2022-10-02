@@ -1,0 +1,11 @@
+(include "/home/guga/.config/eww/bar/widgets/time.yuck")
+(include "/home/guga/.config/eww/bar/widgets/left-menu.yuck")
+
+(defwidget left-widgets []
+  (box :class "left-widgets"
+       :orientation "h"
+       :halign "start"
+       :space-evenly false
+    (left-menu)
+    (time-widget)))
+  

@@ -1,0 +1,19 @@
+(include "/home/guga/.config/eww/bar/widgets/power.yuck")
+(include "/home/guga/.config/eww/bar/widgets/cpu.yuck")
+(include "/home/guga/.config/eww/bar/widgets/memory.yuck")
+(include "/home/guga/.config/eww/bar/widgets/gpu.yuck")
+(include "/home/guga/.config/eww/bar/widgets/disk.yuck")
+(include "/home/guga/.config/eww/bar/widgets/audio.yuck")
+
+(defwidget right-widgets []
+  (box :class ""
+       :orientation "h"
+       :space-evenly false
+       :halign "end"
+       :spacing 15
+    (cpu)
+    (memory)
+    (gpu)
+    (disk)
+    (audio)
+    (power)))

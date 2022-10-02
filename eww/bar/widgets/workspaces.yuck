@@ -1,0 +1,22 @@
+; Very dumb but we got no for loop :(
+(defwidget workspaces []
+  (eventbox :class ""
+            :onscroll "next_workspace=$(bar/scripts/scroll.sh {} ${curr_workspace}) && i3-msg workspace $next_workspace"
+    (box :class "workspaces"
+         :orientation "h"
+         :halign "center"
+      (button :class {curr_workspace == 1 ? "icon curr-workspace" : "icon"} 
+              :onclick "i3-msg workspace 1"
+              {curr_workspace == 1 ? active_workspace_icon : inactive_workspace_icon})
+      (button :class {curr_workspace == 2 ? "icon curr-workspace" : "icon"} 
+              :onclick "i3-msg workspace 2"
+              {curr_workspace == 2 ? active_workspace_icon : inactive_workspace_icon})
+      (button :class {curr_workspace == 3 ? "icon curr-workspace" : "icon"} 
+              :onclick "i3-msg workspace 3"
+              {curr_workspace == 3 ? active_workspace_icon : inactive_workspace_icon})
+      (button :class {curr_workspace == 4 ? "icon curr-workspace" : "icon"} 
+              :onclick "i3-msg workspace 4"
+              {curr_workspace == 4 ? active_workspace_icon : inactive_workspace_icon})
+      (button :class {curr_workspace == 5 ? "icon curr-workspace" : "icon"} 
+              :onclick "i3-msg workspace 5"
+              {curr_workspace == 5 ? active_workspace_icon : inactive_workspace_icon}))))

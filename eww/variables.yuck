@@ -1,0 +1,27 @@
+(defvar is_open_dashboard true)
+(defvar is_open_calendar false)
+(defvar show_audio_slider false)
+(defvar show_power_menu false)
+(defvar active_workspace_icon "")
+(defvar inactive_workspace_icon "")
+
+(defpoll curr_workspace :interval "0.1s"
+  "/home/guga/.config/eww/bar/scripts/curr_workspace.sh")
+
+(defpoll gpu_usage :interval "1s"
+  "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{ print \"\"$1\"\"}'")
+
+(defpoll volume :interval "1s"
+  "pactl get-sink-volume @DEFAULT_SINK@ | awk -F'[[:space:]]' '{ print substr($6, 1, length($6)-1)}'")
+
+(defpoll calendar_day :interval "10h"
+  "date '+%d'")
+
+(defpoll calendar_month :interval "10h"
+  "month=$(date +%m) | month=$((month-1)) | echo $month")
+
+(defpoll calendar_year :interval "10h"
+  "date '+%Y'")
+
+(defpoll time :interval "10s"
+  `date "+%H:%M"`)

@@ -1,0 +1,8 @@
+(defwidget disk []
+  (box :class ""
+       :orientation "h"
+       :space-evenly false
+       :tooltip "DISK"
+    (button :class "icon" :onclick "gnome-disks &"
+      (label :text "  ")) 
+    (label :text "${round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}%")))

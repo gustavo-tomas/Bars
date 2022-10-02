@@ -1,0 +1,11 @@
+(defwidget cal []
+	(box :class "calendar" 
+		   :orientation "h"
+	  (box :class ""
+         :orientation "h"
+      (calendar :class "" 
+                :day calendar_day 
+                :month calendar_month 
+                :year calendar_year
+                :show-day-names true
+                :show-heading true))))

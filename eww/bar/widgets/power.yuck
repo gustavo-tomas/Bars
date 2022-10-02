@@ -1,0 +1,35 @@
+(defwidget power []
+  (eventbox	:class "power-menu"
+            :onhover "eww update show_power_menu=true"	
+            :onhoverlost "eww update show_power_menu=false" 
+    
+    (box :orientation "h"					
+         :space-evenly false 	 
+         :vexpand false 	
+            
+      (revealer	:transition "slideleft"				
+                :reveal show_power_menu			 
+                :duration "0.5s"
+            
+        (box :orientation "h"					
+             :space-evenly false
+
+          (button	:class "icon" 				
+                  :tooltip "Lock Screen"	 
+                  :onclick "bar/scripts/lockscreen.sh" "  ")
+
+          (button	:class "icon" 				
+                  :tooltip "Logout" 		 
+                  :onclick "i3-msg exit" "  ")
+
+          (button	:class "icon"					
+                  :tooltip "Suspend"		 
+                  :onclick "bar/scripts/lockscreen.sh && bar/scripts/suspend.sh" "  ")
+
+          (button	:class "icon"					
+                  :tooltip "Reboot"		 
+                  :onclick "systemctl reboot" "  ")))
+
+      (button	:class "icon power-button"					
+              :tooltip "Shutdown"		 
+              :onclick "systemctl poweroff"	""))))
